@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 async function request<T>(
   path: string,
   method: string,
@@ -9,20 +8,19 @@ async function request<T>(
     const options: RequestInit = {
       method: method,
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
       }
     }
 
     if (data) {
       options.body = JSON.stringify(data)
     }
-    const url = import.meta.env.VITE_SOME_KEY
+    const url = process.env.NEXT_PUBLIC_API_URL
 
     const response = await fetch(url + path, options)
     status = response.status
-    // console.log(response.status)
     const responseData = await response.json()
-    // console.log(responseData)
 
     return { response: responseData, status: response.status }
   } catch (error) {

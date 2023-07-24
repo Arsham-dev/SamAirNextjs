@@ -21,12 +21,12 @@ const useAbout = () => {
   const [director, setdirector] = useState<Director[]>([])
   const getFirstText = async () => {
     const { response } = await request('CUFtext', 'GET')
-    setFirstText(response.text)
+    setFirstText(response?.text)
   }
 
   const getSecondText = async () => {
     const { response } = await request('CUStext', 'GET')
-    setsecondText(response.text)
+    setsecondText(response?.text)
   }
   const getAirplane = async () => {
     const { response } = await request('Airplanes', 'GET')

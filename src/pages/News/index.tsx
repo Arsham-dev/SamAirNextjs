@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import styled from 'styled-components'
 import leftArrow from '../../assets/images/landing/arrow-left.svg'
 import rightArrow from '../../assets/images/landing/arrow-right.svg'
@@ -102,7 +101,7 @@ const Pagination = styled.div`
 `
 const News = () => {
   const { isSmallScreen, pagination, setpagination, news } = useNews()
-  const totalPage = Math.floor(news.length / (isSmallScreen ? 4 : 8)) + 1
+  const totalPage = Math.floor(news?.length / (isSmallScreen ? 4 : 8)) + 1
   return (
     <Main>
       <NewsPartImage
@@ -123,7 +122,7 @@ const News = () => {
         </BaseHeader>
         <NewsItemContainer>
           {news
-            .slice(
+            ?.slice(
               (pagination - 1) * (isSmallScreen ? 4 : 8),
               pagination * (isSmallScreen ? 4 : 8)
             )

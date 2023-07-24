@@ -1,19 +1,19 @@
-import styled from "styled-components";
-import aboutAirplanImage from "../../assets/images/about/firstAirplane.svg";
-import airNaviAirplanImage from "../../assets/images/about/secondAirplane.svg";
-import airplanePictureLeft from "../../assets/images/about/airplanePictureLeft.svg";
-import AirNaviItem from "./AirNaviItem";
-import BoardOfDirectorsItem from "./BoardOfDirectorsItem";
-import footer from "../../assets/images/about/footer.svg";
-import airNaviPic from "../../assets/images/about/air-navi.svg";
-import airplanePictureLeftMobile from "../../assets/images/about/airplanePictureLeftMobile.svg";
-import useAbout from "./useAbout";
+import styled from 'styled-components'
+import aboutAirplanImage from '../../assets/images/about/firstAirplane.svg'
+import airNaviAirplanImage from '../../assets/images/about/secondAirplane.svg'
+import airplanePictureLeft from '../../assets/images/about/airplanePictureLeft.svg'
+import footer from '../../assets/images/about/footer.svg'
+import airNaviPic from '../../assets/images/about/air-navi.svg'
+import airplanePictureLeftMobile from '../../assets/images/about/airplanePictureLeftMobile.svg'
+import useAbout from './useAbout'
+import AirNaviItem from './AirNaviItem'
+import BoardOfDirectorsItem from './BoardOfDirectorsItem'
 
 const AboutBase = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 150px;
-`;
+`
 const AboutTitle = styled.div`
   display: flex;
   flex-direction: row;
@@ -29,7 +29,7 @@ const AboutTitle = styled.div`
     line-height: 39px;
     margin-bottom: 47px;
   }
-`;
+`
 const AboutTitleLine = styled.div`
   width: 505px;
   height: 10px;
@@ -39,7 +39,7 @@ const AboutTitleLine = styled.div`
     width: 118px;
     height: 4px;
   }
-`;
+`
 const AboutDiscription = styled.div<{ src: string }>`
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@ const AboutDiscription = styled.div<{ src: string }>`
     margin-bottom: 48px;
     row-gap: 30px;
   }
-`;
+`
 const AboutDiscriptionLeft = styled.div`
   display: flex;
   flex-direction: row-reverse;
@@ -68,7 +68,7 @@ const AboutDiscriptionLeft = styled.div`
     row-gap: 30px;
     align-items: center;
   }
-`;
+`
 const AboutDiscriptionLeftImage = styled.div<{ src: string }>`
   width: 561px;
   background: linear-gradient(#ff0401, #ff0401) left no-repeat,
@@ -85,7 +85,7 @@ const AboutDiscriptionLeftImage = styled.div<{ src: string }>`
     background-size: 209px, 100%;
     border-radius: 0;
   }
-`;
+`
 const AboutDiscriptionLeftText = styled.div`
   font-weight: 400;
   font-size: 20px;
@@ -98,7 +98,7 @@ const AboutDiscriptionLeftText = styled.div`
     font-size: 12px;
     line-height: 30px;
   }
-`;
+`
 const AboutDiscriptionRight = styled.div`
   display: flex;
   flex-direction: row;
@@ -111,7 +111,7 @@ const AboutDiscriptionRight = styled.div`
     row-gap: 30px;
     align-items: center;
   }
-`;
+`
 const AboutDiscriptionRightImage = styled.div<{ src: string }>`
   width: 561px;
   background: url(${({ src }: { src: string }) => src}) right no-repeat,
@@ -129,7 +129,7 @@ const AboutDiscriptionRightImage = styled.div<{ src: string }>`
     background-size: 209px, 100%;
     border-radius: 0;
   }
-`;
+`
 const AboutDiscriptionRightText = styled.div`
   font-weight: 400;
   font-size: 20px;
@@ -142,7 +142,7 @@ const AboutDiscriptionRightText = styled.div`
     font-size: 12px;
     line-height: 30px;
   }
-`;
+`
 const AirNaviBase = styled.div<{ src: string }>`
   width: 100%;
   position: relative;
@@ -158,7 +158,7 @@ const AirNaviBase = styled.div<{ src: string }>`
     background-image: none;
     margin-bottom: 50px;
   }
-`;
+`
 const AirNavi = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -171,7 +171,7 @@ const AirNavi = styled.div`
     width: 100%;
     row-gap: 10px;
   }
-`;
+`
 const AirNaviTitle = styled.div`
   position: absolute;
   top: 0;
@@ -197,7 +197,7 @@ const AirNaviTitle = styled.div`
     background-size: 152px, 100%;
     margin-bottom: 21px;
   }
-`;
+`
 const BoardOfDirectorsBase = styled.div`
   display: flex;
   flex-direction: row;
@@ -211,7 +211,7 @@ const BoardOfDirectorsBase = styled.div`
     row-gap: 49px;
     align-items: center;
   }
-`;
+`
 const BoardOfDirectorsTitle = styled.div`
   padding: 19px;
   background: #ff0401;
@@ -234,7 +234,7 @@ const BoardOfDirectorsTitle = styled.div`
     font-size: 14px;
     line-height: 30px;
   }
-`;
+`
 const BoardOfDirectorsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -244,12 +244,12 @@ const BoardOfDirectorsContainer = styled.div`
   @media (max-width: 1180px) {
     grid-template-columns: repeat(2, 1fr);
   }
-`;
+`
 const AboutFooter = styled.img`
   margin-bottom: 60px;
-`;
+`
 const About = () => {
-  const { firstText, isTablet, secondText, airplane, director } = useAbout();
+  const { firstText, isTablet, secondText, airplane, director } = useAbout()
   // console.log(director)
 
   return (
@@ -283,11 +283,11 @@ const About = () => {
           )}
         </AirNaviTitle>
         <AirNavi>
-          {airplane.map((item, index) => (
+          {airplane?.map((item, index) => (
             <AirNaviItem
               index={index}
               count={1}
-              title={item.model + " " + item.register}
+              title={item.model + ' ' + item.register}
               key={item.model + index.toString() + item.register}
               image={item.imageLink}
             />
@@ -297,11 +297,11 @@ const About = () => {
       <BoardOfDirectorsBase>
         <BoardOfDirectorsTitle>
           اعضای
-          {!isTablet ? <br /> : " "}
+          {!isTablet ? <br /> : ' '}
           هیئت مدیره
         </BoardOfDirectorsTitle>
         <BoardOfDirectorsContainer>
-          {director.map((item, index) => (
+          {director?.map((item, index) => (
             <BoardOfDirectorsItem
               image={item.imageLink}
               name={item.name}
@@ -313,6 +313,6 @@ const About = () => {
       </BoardOfDirectorsBase>
       {!isTablet && <AboutFooter src={footer} alt="footer" />}
     </AboutBase>
-  );
-};
-export default About;
+  )
+}
+export default About
