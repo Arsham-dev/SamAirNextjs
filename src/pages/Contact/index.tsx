@@ -1,17 +1,17 @@
-import styled from "styled-components";
-import contactInfoImage from "../../assets/images/contact/info.png";
+import styled from 'styled-components'
+import contactInfoImage from '@/assets/images/contact/info.png'
 
-import address from "../../assets/images/contact/address.svg";
-import phone from "../../assets/images/contact/phone.svg";
-import post from "../../assets/images/contact/post.svg";
-import person from "../../assets/images/contact/person.svg";
-import emailIcon from "../../assets/images/contact/email.svg";
+import address from '@/assets/images/contact/address.svg'
+import phone from '@/assets/images/contact/phone.svg'
+import post from '@/assets/images/contact/post.svg'
+import person from '@/assets/images/contact/person.svg'
+import emailIcon from '@/assets/images/contact/email.svg'
 
-import Input from "../../componets/Input";
-import { useState } from "react";
-import request from "../../componets/request";
-import { toast } from "react-toastify";
-import Image from "next/image";
+import Input from '@/componets/Input'
+import { useState } from 'react'
+import request from '@/componets/request'
+import { toast } from 'react-toastify'
+import Image from 'next/image'
 
 const ContactBase = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ const ContactBase = styled.div`
     margin: 0 10px;
     row-gap: 50px;
   }
-`;
+`
 const ContactInfo = styled.div`
   display: flex;
   flex-direction: row;
@@ -35,7 +35,7 @@ const ContactInfo = styled.div`
   @media (max-width: 400px) {
     width: 100%;
   }
-`;
+`
 const ContactInfoRedPart = styled.div`
   min-width: 95px;
   height: 100%;
@@ -43,7 +43,7 @@ const ContactInfoRedPart = styled.div`
   @media (max-width: 400px) {
     display: none;
   }
-`;
+`
 const ContactInfoText = styled.div<{ image: string }>`
   height: calc(100%);
   background-image: url(${({ image }: { image: string }) => image});
@@ -58,7 +58,7 @@ const ContactInfoText = styled.div<{ image: string }>`
   @media (max-width: 400px) {
     border-radius: 20px;
   }
-`;
+`
 const ContactInfoTextItem = styled.div`
   display: flex;
   flex-direction: column;
@@ -66,16 +66,16 @@ const ContactInfoTextItem = styled.div`
   font-weight: 400;
   font-size: 24px;
   color: #ffffff;
-`;
+`
 const ContactInfoTextItemTitle = styled.div`
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
   column-gap: 10px;
-`;
+`
 const ContactInfoTextItemDescription = styled.div`
   display: flex;
-`;
+`
 const ContactForm = styled.div`
   display: flex;
   flex-direction: column;
@@ -88,11 +88,11 @@ const ContactForm = styled.div`
     align-items: center;
     margin-bottom: 50px;
   }
-`;
+`
 const SubmitButtton = styled.button`
   width: 100%;
   text-align: center;
-  font-family: "Shabnam";
+  font-family: 'Shabnam';
   font-weight: 400;
   font-size: 24px;
   color: #ffffff;
@@ -104,7 +104,7 @@ const SubmitButtton = styled.button`
   &:hover {
     opacity: 0.7;
   }
-`;
+`
 const ContactFormTitle = styled.div`
   display: flex;
   flex-direction: row;
@@ -114,7 +114,7 @@ const ContactFormTitle = styled.div`
   line-height: 79px;
   color: #000000;
   align-items: flex-end;
-`;
+`
 const ContactFormTitleLine = styled.div`
   width: 345px;
   height: 6px;
@@ -123,20 +123,20 @@ const ContactFormTitleLine = styled.div`
   @media (max-width: 400px) {
     display: none;
   }
-`;
+`
 const Contact = () => {
-  const [name, setname] = useState("");
-  const [email, setemail] = useState("");
-  const [text, settext] = useState("");
+  const [name, setname] = useState('')
+  const [email, setemail] = useState('')
+  const [text, settext] = useState('')
   const sendMessage = async () => {
-    const { status } = await request("Mail", "POST", {
+    const { status } = await request('Mail', 'POST', {
       nameLname: name,
       email: email,
-      message: text,
-    });
+      message: text
+    })
     if (status === 200)
-      toast("پیام شما با موفقیت ارسال شد", { type: "success" });
-  };
+      toast('پیام شما با موفقیت ارسال شد', { type: 'success' })
+  }
   return (
     <ContactBase>
       <ContactInfo>
@@ -199,6 +199,6 @@ const Contact = () => {
         <SubmitButtton onClick={sendMessage}>ارسال پیام</SubmitButtton>
       </ContactForm>
     </ContactBase>
-  );
-};
-export default Contact;
+  )
+}
+export default Contact

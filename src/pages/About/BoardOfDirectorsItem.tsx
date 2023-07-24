@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { FC } from 'react'
 import styled from 'styled-components'
 interface BoardOfDirectorsItemProps {
@@ -77,7 +78,7 @@ const BoardOfDirectorsItemInfoTextPosition = styled.span`
     max-width: 100px;
   }
 `
-const BoardOfDirectorsItemInfoImage = styled.img`
+const BoardOfDirectorsItemInfoImage = styled(Image)`
   height: 247px;
   width: 250px;
   border-radius: 25px 25px 0px 0px;

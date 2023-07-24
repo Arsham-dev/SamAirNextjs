@@ -1,9 +1,10 @@
 import styled from 'styled-components'
-import aboutUs from '../../assets/images/landing/about-us.svg'
+import aboutUs from '@/assets/images/landing/about-us.svg'
 import { useState } from 'react'
 import { useEffectOnce } from 'usehooks-ts'
-import request from '../../componets/request'
+import request from '@/componets/request'
 import Link from 'next/link'
+import Image from 'next/image'
 const AboutUsPartBase = styled.div`
   margin-top: 65.75px;
   display: flex;
@@ -40,7 +41,7 @@ const MoreInfoButton = styled(Link)`
     opacity: 0.7;
   }
 `
-const AboutUsImage = styled.img`
+const AboutUsImage = styled(Image)`
   @media (max-width: 400px) {
     display: none;
   }

@@ -1,8 +1,9 @@
 import styled from 'styled-components'
-import leftArrow from '../../assets/images/landing/arrow-left.svg'
-import rightArrow from '../../assets/images/landing/arrow-right.svg'
-import newsIcon from '../../assets/images/landing/news-icon.svg'
+import leftArrow from '@/assets/images/landing/arrow-left.svg'
+import rightArrow from '@/assets/images/landing/arrow-right.svg'
+import newsIcon from '@/assets/images/landing/news-icon.svg'
 import useNewsPart from './useNewsPart'
+import Image from 'next/image'
 
 const Main = styled.div`
   display: flex;
@@ -18,7 +19,7 @@ const Main = styled.div`
     margin-right: 10px;
   }
 `
-const NewsPartImage = styled.img`
+const NewsPartImage = styled(Image)`
   cursor: pointer;
   transition: all 0.3s linear;
   &:hover {
@@ -120,7 +121,7 @@ const NewsItemContainer = styled.div`
     grid-template-columns: 1fr 1fr;
   }
 `
-const NewsIcon = styled.img`
+const NewsIcon = styled(Image)`
   cursor: pointer;
   transition: all 0.3s linear;
   &:hover {
@@ -140,7 +141,8 @@ const Pagination = styled.div`
 `
 const NewsPart = () => {
   const { isSmallScreen, pagination, setpagination, news } = useNewsPart()
-  const totalPage = Math.floor(news?.length / (isSmallScreen ? 4 : 8)) + 1
+  const totalPage =
+    Math.floor((news?.length || 0) / (isSmallScreen ? 4 : 8)) + 1
 
   return (
     <Main>

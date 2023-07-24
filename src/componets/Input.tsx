@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { FC } from 'react'
 import styled from 'styled-components'
 
@@ -31,6 +32,7 @@ const TextAreaBase = styled.textarea`
   font-weight: 400;
   font-size: 20px;
   font-family: 'Shabnam';
+  resize: none;
 `
 interface InputProps {
   icon?: string
@@ -64,7 +66,7 @@ const Input: FC<InputProps> = ({
           onChange={(e) => onChange(e.target.value)}
         />
       )}
-      {icon && <img src={icon} alt="icon" />}
+      {icon && <Image src={icon} alt="icon" />}
     </InputContainer>
   )
 }

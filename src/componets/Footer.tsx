@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import instagramLogo from '../assets/images/components/instagram-logo.svg'
-import telegramLogo from '../assets/images/components/telegram-logo.svg'
-import whatsappLogo from '../assets/images/components/whats-app-logo.svg'
-import footerBottom from '../assets/images/components/footer-bottom.svg'
-import footerTop from '../assets/images/components/footer-top.svg'
+import instagramLogo from '@/assets/images/components/instagram-logo.svg'
+import telegramLogo from '@/assets/images/components/telegram-logo.svg'
+import whatsappLogo from '@/assets/images/components/whats-app-logo.svg'
+import footerBottom from '@/assets/images/components/footer-bottom.svg'
+import footerTop from '@/assets/images/components/footer-top.svg'
 
 const Main = styled.footer`
   display: flex;
@@ -85,9 +85,9 @@ const Footer = () => {
       </TopPart>
       <BottomPart>
         <SocialMediaContainer>
-          <SocialMedia media={instagramLogo} href="#" />
-          <SocialMedia media={telegramLogo} href="#" />
-          <SocialMedia media={whatsappLogo} href="#" />
+          <SocialMedia media={instagramLogo.src} href="#" />
+          <SocialMedia media={telegramLogo.src} href="#" />
+          <SocialMedia media={whatsappLogo.src} href="#" />
         </SocialMediaContainer>
         <SepratorLine />
         <Policy>
