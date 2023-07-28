@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useEffectOnce, useMediaQuery } from 'usehooks-ts'
-import request from '../../componets/request'
+import request from '../../Componets/request'
 
 type News = {
   title: string

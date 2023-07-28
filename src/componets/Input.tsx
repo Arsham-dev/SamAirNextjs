@@ -41,6 +41,7 @@ interface InputProps {
   value: string
   onChange: (value: string) => void
   type?: string
+  disabled?: boolean
 }
 const Input: FC<InputProps> = ({
   icon,
@@ -48,7 +49,8 @@ const Input: FC<InputProps> = ({
   isTextArea,
   value,
   onChange,
-  type
+  type,
+  disabled
 }) => {
   return (
     <InputContainer>
@@ -64,6 +66,7 @@ const Input: FC<InputProps> = ({
           placeholder={placeholder}
           value={value}
           onChange={(e) => onChange(e.target.value)}
+          disabled={disabled}
         />
       )}
       {icon && <Image src={icon} alt="icon" />}

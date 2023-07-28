@@ -60,15 +60,15 @@ const MoreOption = styled(Image)`
     margin-top: 15px;
   }
 `
-const Menu = styled.div<{ isOpen: boolean }>`
-  display: ${({ isOpen }: { isOpen: boolean }) => (isOpen ? 'flex' : 'flex')};
+const Menu = styled.div<{ isopen: boolean }>`
+  display: ${({ isopen }: { isopen: boolean }) => (isopen ? 'flex' : 'flex')};
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
-  width: ${({ isOpen }: { isOpen: boolean }) => (isOpen ? '100%' : '0')};
+  width: ${({ isopen }: { isopen: boolean }) => (isopen ? '100%' : '0')};
   height: 100vh;
   transition: width 0.5s linear;
   background-color: rgba(0, 0, 0, 0.9);
@@ -76,9 +76,9 @@ const Menu = styled.div<{ isOpen: boolean }>`
 `
 const Header = () => {
   const location = useRouter()
-  const [isOpen, setisOpen] = useState(false)
+  const [isopen, setisopen] = useState(false)
   const onClose = () => {
-    setisOpen(false)
+    setisopen(false)
   }
 
   return (
@@ -101,13 +101,13 @@ const Header = () => {
         </PagesLink>
       </PageLinkContainer>
       <MoreOption
-        onClick={() => setisOpen(!isOpen)}
+        onClick={() => setisopen(!isopen)}
         src={moreOption}
         alt="more-option"
       />
       <Logo media={logo.src} href="/" />
-      <Menu isOpen={isOpen}>
-        {isOpen && (
+      <Menu isopen={isopen}>
+        {isopen && (
           <>
             <PagesLink href="/" onClick={onClose}>
               صفحه اصلی

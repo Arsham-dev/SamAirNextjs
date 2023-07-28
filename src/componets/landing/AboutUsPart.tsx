@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import aboutUs from '@/assets/images/landing/about-us.svg'
 import { useState } from 'react'
 import { useEffectOnce } from 'usehooks-ts'
-import request from '@/componets/request'
+import request from '@/Componets/request'
 import Link from 'next/link'
 import Image from 'next/image'
 const AboutUsPartBase = styled.div`
